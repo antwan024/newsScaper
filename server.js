@@ -18,7 +18,15 @@ app.use(express.json());
 app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/scraper", { useNewUrlParser: true });
 
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
+app.get("/", function(req, res) {
+    
+      
+      res.render("index");
+    
+});
 
 app.get("/scrape", function(req, res) {
 
