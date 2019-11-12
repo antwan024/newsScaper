@@ -31,10 +31,15 @@ mongoose.connect(uristring, function (err, res) {
 });
 
 
-// mongoose.connect("mongodb://localhost/scraper", { useNewUrlParser: true });
+// Handlebars initialization
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+
+
+//  Routes   ========================================
+
 
 app.get("/", function(req, res) {
     
@@ -42,6 +47,10 @@ app.get("/", function(req, res) {
       res.render("index");
     
 });
+
+
+//   Scraping route for ESPN.com   ====================
+
 
 app.get("/scrape", function(req, res) {
 
