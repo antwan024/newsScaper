@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 var uristring =
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
+    process.env.MONGODB_URI ||
+    process.env.MONGOLAB_OLIVE_URI ||
     'mongodb://localhost/scraper';
 
 mongoose.connect(uristring, function (err, res) {
